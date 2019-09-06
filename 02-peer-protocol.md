@@ -956,6 +956,7 @@ sign the resulting transaction (as defined in [BOLT #3](03-transactions.md)), an
 A sending node:
   - MUST NOT send a `commitment_signed` message that does not include any
 updates.
+  - MUST NOT send multiple `commitment_signed` before receiving `revoke_and_ack`.
   - MAY send a `commitment_signed` message that only
 alters the fee.
   - MAY send a `commitment_signed` message that doesn't
