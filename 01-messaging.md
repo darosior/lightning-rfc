@@ -277,6 +277,8 @@ The receiving node:
     - MAY fail the connection.
   - if the feature vector does not set all known, transitive dependencies:
     - MUST fail the connection.
+  - upon receiving `networks` containing no common chains
+    - MAY fail the connection.
 
 #### Rationale
 
