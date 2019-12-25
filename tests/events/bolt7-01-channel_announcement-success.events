@@ -6,7 +6,7 @@ include setup.incl
 
 2. connect: privkey=0000000000000000000000000000000000000000000000000000000000000003
 3. expect-send: type=init
-4. recv: type=init localfeatures= globalfeatures=
+4. recv: type=init features= globalfeatures=
 
 # Funding tx spending 16835ac8c154b616baac524163f41fb0c4f82c7b972ad35d4d6f18d854f6856b/1, feerate 253 to bitcoin privkeys 0000000000000000000000000000000000000000000000000000000000000010 and 0000000000000000000000000000000000000000000000000000000000000020
 # txid 189c40b0728f382fe91c87270926584e48e0af3a6789f37454afee6c7560311d
@@ -28,7 +28,7 @@ include setup.incl
 # New peer connects, asking for initial_routing_sync.  We *won't* relay channel_announcement, as there is no channel_update.
 7. connect: privkey=0000000000000000000000000000000000000000000000000000000000000005
 8. expect-send: type=init
-9. recv: type=init localfeatures=08 globalfeatures=
+9. recv: type=init features=08 globalfeatures=
 10. must-not-send: type=channel_announcement
 11. disconnect:
 
@@ -47,7 +47,7 @@ include setup.incl
 # Now we'll relay to a new peer.
 13. connect: privkey=0000000000000000000000000000000000000000000000000000000000000005
 14. expect-send: type=init
-15. recv: type=init localfeatures=08 globalfeatures=
+15. recv: type=init features=08 globalfeatures=
 16. expect-send: type=channel_announcement
    node_signature_1=SIG(0000000000000000000000000000000000000000000000000000000000000002:4ad0946fa8c3996015dec325c4b0540299287427ec8d8313842ce6f8dc06791a)
    node_signature_2=SIG(0000000000000000000000000000000000000000000000000000000000000003:4ad0946fa8c3996015dec325c4b0540299287427ec8d8313842ce6f8dc06791a)
@@ -105,6 +105,6 @@ include setup.incl
 
 22. connect: privkey=0000000000000000000000000000000000000000000000000000000000000005
 23. expect-send: type=init
-24. recv: type=init localfeatures=08 globalfeatures=
+24. recv: type=init features=08 globalfeatures=
 25. must-not-send: type=channel_announcement
 26. must-not-send: type=channel_update

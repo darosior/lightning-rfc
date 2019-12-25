@@ -6,7 +6,7 @@ include setup.incl
 
 2. connect: privkey=0000000000000000000000000000000000000000000000000000000000000002
 3. expect-send: type=init
-4. recv: type=init globalfeatures= localfeatures=
+4. recv: type=init globalfeatures= features=
 
     # Start with the 'accepter' side of an open_channel (test runner initiates)
     # We assume a funding_per_kw=253 Satoshi/kSipa.

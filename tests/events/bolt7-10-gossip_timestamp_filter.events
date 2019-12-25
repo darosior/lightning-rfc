@@ -6,7 +6,7 @@ include setup.incl
 
 2. connect: privkey=0000000000000000000000000000000000000000000000000000000000000003
 3. expect-send: type=init
-4. recv: type=init localfeatures= globalfeatures=
+4. recv: type=init features= globalfeatures=
 
 5. block: $BLOCK_103
 
@@ -16,7 +16,7 @@ include setup.incl
 # New peer connects, asks for gossip_timestamp_filter=all.  We *won't* relay channel_announcement, as there is no channel_update.
 8. connect: privkey=0000000000000000000000000000000000000000000000000000000000000005
 9. expect-send: type=init
-10. recv: type=init localfeatures= globalfeatures=
+10. recv: type=init features= globalfeatures=
 11. recv: type=gossip_timestamp_filter
    chain_hash=06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f
    first_timestamp=0
@@ -30,7 +30,7 @@ include setup.incl
 # New peer connects, asks for gossip_timestamp_filter=all.  update and node announcement will be relayed.
 16. connect: privkey=0000000000000000000000000000000000000000000000000000000000000005
 17. expect-send: type=init
-18. recv: type=init localfeatures= globalfeatures=
+18. recv: type=init features= globalfeatures=
 19. recv: type=gossip_timestamp_filter
    chain_hash=06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f
    first_timestamp=0
@@ -49,7 +49,7 @@ include setup.incl
 
 23. connect: privkey=0000000000000000000000000000000000000000000000000000000000000005
 24. expect-send: type=init
-25. recv: type=init localfeatures= globalfeatures=
+25. recv: type=init features= globalfeatures=
 26. recv: type=gossip_timestamp_filter
    chain_hash=06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f
    first_timestamp=1000
@@ -61,7 +61,7 @@ include setup.incl
 
 31. connect: privkey=0000000000000000000000000000000000000000000000000000000000000005
 32. expect-send: type=init
-33. recv: type=init localfeatures= globalfeatures=
+33. recv: type=init features= globalfeatures=
 34. recv: type=gossip_timestamp_filter
    chain_hash=06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f
    first_timestamp=1565587764
@@ -74,7 +74,7 @@ include setup.incl
 # These two succeed in getting the gossip, then stay connected for next test.
 39. connect: privkey=0000000000000000000000000000000000000000000000000000000000000005
 40. expect-send: type=init
-41. recv: type=init localfeatures= globalfeatures=
+41. recv: type=init features= globalfeatures=
 42. recv: type=gossip_timestamp_filter
    chain_hash=06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f
    first_timestamp=1565587763
@@ -86,7 +86,7 @@ include setup.incl
 
 45. connect: privkey=0000000000000000000000000000000000000000000000000000000000000006
 46. expect-send: type=init
-47. recv: type=init localfeatures= globalfeatures=
+47. recv: type=init features= globalfeatures=
 48. recv: type=gossip_timestamp_filter
    chain_hash=06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f
    first_timestamp=1000
