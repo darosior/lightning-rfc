@@ -74,6 +74,25 @@ EXPECT_INIT=expect-send: type=init
     # If you require `option_static_remotekey`, you will advertize it even.
     1. $EXPECT_INIT features=1000/3000 option_static_remotekey/even
 
+    # The init message contains the network `chain_hash`
+    1. $EXPECT_INIT tlvs=012006226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f
+    # Sending the correct `chain_hash`: no error
+    2. recv: type=init globalfeatures=020000 features=2000 tlvs=012006226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f
+
+    1. $EXPECT_INIT tlvs=012006226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f
+    # Sending the correct `chain_hash` as part of an array with unknown `chain_hash`s: no error
+    2. recv: type=init globalfeatures= features= tlvs=014006226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f6fe28c0ab6f1b372c1a6a246ae63f74f931e8365e15a089c68d6190000000000
+
+    # Wrong `chain_hash`, and only one provided: error
+    1. $EXPECT_INIT tlvs=012006226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f
+    2. recv: type=init globalfeatures=020000 features=2000 tlvs=01206fe28c0ab6f1b372c1a6a246ae63f74f931e8365e15a089c68d6190000000000
+    3. expect-error:
+
+    # Many `chain_hash` provided, but no common one : error
+    1. $EXPECT_INIT tlvs=012006226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f
+    2. recv: type=init globalfeatures=020000 features=2000 tlvs=01406fe28c0ab6f1b372c1a6a246ae63f74f931e8365e15a089c68d61900000000005fe28c0ab6f1b372c1a6a246ae63f74f931e8365e15a089c68d6190000000000
+    3. expect-error:
+
     # Note: it's undefined what you'll do if implementation requires
     # an option and isn't offered it.  The recipient of the required feature
     # bit should notice the requirement and error.
