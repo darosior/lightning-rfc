@@ -266,7 +266,7 @@ class CLightningRunner(object):
             # reading it to figure out what went wrong.
             fut = self.executor.submit(self._readmsg, conn)
             try:
-                 msg = fut.result(1)
+                msg = fut.result(1)
             except futures.TimeoutError:
                 msg = None
             if msg:
