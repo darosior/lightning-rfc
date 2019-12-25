@@ -10,7 +10,7 @@
 
 1. connect: privkey=0000000000000000000000000000000000000000000000000000000000000003
 2. expect-send: type=init
-3. recv: type=init globalfeatures= localfeatures=
+3. recv: type=init globalfeatures= features=
 
     1. nothing
 

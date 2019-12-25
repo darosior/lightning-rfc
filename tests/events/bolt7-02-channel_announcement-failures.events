@@ -5,7 +5,7 @@ include setup.incl
 
 2. connect: privkey=0000000000000000000000000000000000000000000000000000000000000003
 3. expect-send: type=init
-4. recv: type=init localfeatures= globalfeatures=
+4. recv: type=init features= globalfeatures=
 
 # Funding tx spending 16835ac8c154b616baac524163f41fb0c4f82c7b972ad35d4d6f18d854f6856b/1, feerate 253 to bitcoin privkeys 0000000000000000000000000000000000000000000000000000000000000010 and 0000000000000000000000000000000000000000000000000000000000000020
 # txid 189c40b0728f382fe91c87270926584e48e0af3a6789f37454afee6c7560311d
@@ -202,6 +202,6 @@ include setup.incl
 # New peer connects, asking for initial_routing_sync.  We *won't* relay channel_announcement.
 10. connect: privkey=0000000000000000000000000000000000000000000000000000000000000005
 11. expect-send: type=init
-12. recv: type=init localfeatures=08 globalfeatures=
+12. recv: type=init features=08 globalfeatures=
 13. must-not-send: type=channel_announcement
 14. must-not-send: type=channel_update

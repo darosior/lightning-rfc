@@ -18,7 +18,7 @@ include setup.incl
 
 2. connect: privkey=0000000000000000000000000000000000000000000000000000000000000002
 3. expect-send: type=init
-4. recv: type=init globalfeatures= localfeatures=2002
+4. recv: type=init globalfeatures= features=2002
 5. recv: type=open_channel
    chain_hash=06226e46111a0b59caaf126043eb5bbf28c34f3a5e332a1fc7b2b73cf188910f
    temporary_channel_id=0000000000000000000000000000000000000000000000000000000000000000
@@ -136,7 +136,7 @@ include setup.incl
         1. disconnect:
         2. connect: privkey=0000000000000000000000000000000000000000000000000000000000000002
         3. expect-send: type=init
-        4. recv: type=init globalfeatures= localfeatures=02
+        4. recv: type=init globalfeatures= features=02
         5. expect-send: type=channel_reestablish
            channel_id=2f0b21d6bd32971ca6803de2bdc7370bbf12e0cd9ce73afc1c591f5c995b0841
            next_commitment_number=2
@@ -197,7 +197,7 @@ include setup.incl
         1. disconnect:
         2. connect: privkey=0000000000000000000000000000000000000000000000000000000000000002
         3. expect-send: type=init
-        4. recv: type=init globalfeatures= localfeatures=02
+        4. recv: type=init globalfeatures= features=02
         5. expect-send: type=channel_reestablish
            channel_id=2f0b21d6bd32971ca6803de2bdc7370bbf12e0cd9ce73afc1c591f5c995b0841
            next_commitment_number=2
@@ -231,7 +231,7 @@ include setup.incl
     1. disconnect:
     2. connect: privkey=0000000000000000000000000000000000000000000000000000000000000002
     3. expect-send: type=init
-    4. recv: type=init globalfeatures= localfeatures=02
+    4. recv: type=init globalfeatures= features=02
     5. expect-send: type=channel_reestablish
        channel_id=2f0b21d6bd32971ca6803de2bdc7370bbf12e0cd9ce73afc1c591f5c995b0841
        next_commitment_number=2
@@ -269,7 +269,7 @@ include setup.incl
     1. disconnect:
     2. connect: privkey=0000000000000000000000000000000000000000000000000000000000000002
     3. expect-send: type=init
-    4. recv: type=init globalfeatures= localfeatures=02
+    4. recv: type=init globalfeatures= features=02
     5. expect-send: type=channel_reestablish
        channel_id=2f0b21d6bd32971ca6803de2bdc7370bbf12e0cd9ce73afc1c591f5c995b0841
        next_commitment_number=2
@@ -300,7 +300,7 @@ include setup.incl
     1. disconnect:
     2. connect: privkey=0000000000000000000000000000000000000000000000000000000000000002
     3. expect-send: type=init
-    4. recv: type=init globalfeatures= localfeatures=02
+    4. recv: type=init globalfeatures= features=02
     5. expect-send: type=channel_reestablish
        channel_id=2f0b21d6bd32971ca6803de2bdc7370bbf12e0cd9ce73afc1c591f5c995b0841
        next_commitment_number=2
@@ -335,7 +335,7 @@ include setup.incl
     1. disconnect:
     2. connect: privkey=0000000000000000000000000000000000000000000000000000000000000002
     3. expect-send: type=init
-    4. recv: type=init globalfeatures= localfeatures=02
+    4. recv: type=init globalfeatures= features=02
     5. expect-send: type=channel_reestablish
        channel_id=2f0b21d6bd32971ca6803de2bdc7370bbf12e0cd9ce73afc1c591f5c995b0841
        next_commitment_number=2
@@ -376,7 +376,7 @@ include setup.incl
     1. disconnect:
     2. connect: privkey=0000000000000000000000000000000000000000000000000000000000000002
     3. expect-send: type=init
-    4. recv: type=init globalfeatures= localfeatures=02
+    4. recv: type=init globalfeatures= features=02
     5. expect-send: type=channel_reestablish
        channel_id=2f0b21d6bd32971ca6803de2bdc7370bbf12e0cd9ce73afc1c591f5c995b0841
        next_commitment_number=3
@@ -399,7 +399,7 @@ include setup.incl
     1. disconnect:
     2. connect: privkey=0000000000000000000000000000000000000000000000000000000000000002
     3. expect-send: type=init
-    4. recv: type=init globalfeatures= localfeatures=02
+    4. recv: type=init globalfeatures= features=02
     5. expect-send: type=channel_reestablish
        channel_id=2f0b21d6bd32971ca6803de2bdc7370bbf12e0cd9ce73afc1c591f5c995b0841
        next_commitment_number=3

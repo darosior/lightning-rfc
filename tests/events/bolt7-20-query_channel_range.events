@@ -15,7 +15,7 @@ include setup.incl
 
 4. connect: privkey=0000000000000000000000000000000000000000000000000000000000000003
 5. expect-send: type=init
-6. recv: type=init localfeatures= globalfeatures=
+6. recv: type=init features= globalfeatures=
 # They can send this, we'll ignore it.
 7. maybe-send: type=gossip_timestamp_filter
 
@@ -31,7 +31,7 @@ include setup.incl
 # New peer connects, with gossip_query option.
 13. connect: privkey=0000000000000000000000000000000000000000000000000000000000000005
 14. expect-send: type=init
-15. recv: type=init localfeatures=80 globalfeatures=
+15. recv: type=init features=80 globalfeatures=
 16. maybe-send: type=gossip_timestamp_filter
 
     # No queries?  Must not get anything.
